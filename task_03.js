@@ -3,10 +3,5 @@
 
 
 let n = 3;
-if (Number.isInteger(n) && n >= 1 && n <= 9) {
-    sum = n + (Number(String(n) * n)) + Number(String(n) * n * n)
-    console.log(sum)
-}
-else {
-    console.log('Enter an integer from 1 to 9')
-}
+const sum = n + Number(String(n) + n) + Number(String(n) + n + n);
+console.log(sum)

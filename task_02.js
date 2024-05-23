@@ -5,16 +5,16 @@
 
 
 // / 1.  x2 - 6x + 9 = 0. - один корень
-let a = 1;
-let b = -6;
-let c = 9;
+const a = 1;
+const b = -6;
+const c = 9;
 const x1 = (-b / (2 * a)) //1 корень по условию D==0
 
 // 2.  x2 - 4x - 5 = 0. - два корня
-let a2 = 1;
-let b2 = -4;
-let c2 = -5;
-let discriminant = b2 ** 2 - 4 * a2 * c2;
+const a2 = 1;
+const b2 = -4;
+const c2 = -5;
+const discriminant = b2 ** 2 - 4 * a2 * c2;
 // console.log(discriminant)
 const x2 = ((-b2 + Math.sqrt(discriminant)) / (2 * a2)) //2 корня по условию D > 0
 const x3 = ((-b2 - Math.sqrt(discriminant)) / (2 * a2))
