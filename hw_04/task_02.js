@@ -43,14 +43,16 @@ let age = '23';
 if (isNaN(age)) {
     console.log('Please enter a number')
 }
-else if (age < MinAge) {
-    console.log(`You don't have access cause your age is ${age}, it is less then ${MinAge}`)
-}
-else if (age >= MinAge && age <= MaxAge) {
-    console.log(`Welcome!`)
-}
-else if (age > MaxAge) {
-    console.log(`Keep calm and watch Culture channel!`)
+else {
+    if (age < MinAge) {
+        console.log(`You don't have access cause your age is ${age}, it is less then ${MinAge}`)
+    }
+    if (age >= MinAge && age <= MaxAge) {
+        console.log(`Welcome!`)
+    }
+    if (age > MaxAge) {
+        console.log(`Keep calm and watch Culture channel!`)
+    }
 }
 // console.log(isNaN(parseInt(age)))
 
