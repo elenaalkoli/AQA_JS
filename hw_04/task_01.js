@@ -18,3 +18,4 @@ else if (age > MaxAge) {
     console.log(`Keep calm and watch Culture channel!`)
 }
 else console.log(`Technical work`)
+// comment
