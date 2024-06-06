@@ -15,12 +15,12 @@ Task 1.
 */
 
 //1.1
-// const symbol = ':)';
-// let output = '';
-// for (let i = 1; i <= 5; i++) {
-//     output += symbol;
-//     console.log(output)
-// }
+const symbol = ':)';
+let output = '';
+for (let i = 1; i <= 5; i++) {
+  output += symbol;
+  console.log(output)
+}
 
 // 1.2 методом repeat через цикл while
 const symbol = ':)';
