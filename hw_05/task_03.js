@@ -32,19 +32,31 @@ if (!word || typeof word !== "string" || !isNaN(word)) {
 //   Например let str = 'AbC'; let offset = -1, result = 'ZaB';
 //   Например let str = 'ZzZ'; let offset = 1, result = 'AaA';
 
-const message = 'AbC'; // 
-const offset = +1;
-// const messageInLowerCase = [...message.toLowerCase()] //то же самое => message.toLowerCase().split('') 
-// const engAlphabet = [...'abcdefghijklmnopqrstuvwxyz'];
-let result = '';
-if (!message || typeof message !== "string") {
-    console.log('Please provide a valid string')
-}
-else {
-    for (let i = 0; i < message.length; i++) {
-        let codeOfSymbol = message.charCodeAt(i) //получаю юникод каждого символа
-        codeOfSymbol = codeOfSymbol + offset
-        result += String.fromCharCode(codeOfSymbol) //обратно
+
+const message = "AbC";
+const offset = -1;
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+let messageInCaesarCase = "";
+let letters = '';
+for (let i = 0; i < message.length; i++) {
+    if (message[i].toLowerCase() === message[i]) { //приводим каждую введенную букву к соотв. ей алфавито-регистру 
+        letters = alphabet;
+    } else letters = alphabet.toUpperCase();
+    // console.log(letters)
+
+    let indexOfLetters = letters.indexOf(message[i]); //задаем индекс посимвольно в нашем обозначенном алфавите 
+    // console.log(indexOfLetters)
+    let newMessage;
+    if (indexOfLetters + offset < 0) { //при -1 если уйдем за А/a
+        newMessage = indexOfLetters + offset + letters.length; //индекс символа + офсет + всю длину алфавита 
+    } else if (indexOfLetters + offset >= letters.length) { //при +1 если идем за Z/z
+        newMessage = indexOfLetters + offset - letters.length; //индекс символа + офсет - всю длину алфавита 
+    } else {
+        newMessage = indexOfLetters + offset;
     }
-    console.log(result)
+    messageInCaesarCase += letters[newMessage];
 }
+console.log(messageInCaesarCase);
+
+
+
