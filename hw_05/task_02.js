@@ -96,21 +96,21 @@ for (let i = 1; i <= 100; i++) {
 // // 4. Написать скрипт, который преобразует любое предложение в camelCase. Первое слово должно начинаться с буквы в нижнем регистре, 
 // //   у остальных -  верхнем. Пример: I am super engineer => iAmSuperEngineer
 
-// const input = "I am super QA engineer" // 1- пройти циклом по всем эл-там массива, отсекаем 0 элемент и пробел, остальное все к нижнему
-// let inputInCamelCase = '';
-// if (!input || typeof input !== "string") {
-//     console.log('Please provide a valid string')
-// } else {
-//     for (let i = 0; i < input.length; i++) {
-//         if (i === 0) {
-//             inputInCamelCase += input[i].toLowerCase();
-//         }
-//         else if (input[i] === ' ') {
-//             inputInCamelCase += input[i + 1].toUpperCase();
-//             i++;//переходим к след элементу
-//         }
-//         else
-//             inputInCamelCase += input[i].toLowerCase()
-//     }
-// }
-// console.log(inputInCamelCase);
+const input = "I am super QA engineer" // 1- пройти циклом по всем эл-там массива, отсекаем 0 элемент и пробел, остальное все к нижнему
+let inputInCamelCase = '';
+if (!input || typeof input !== "string") {
+    console.log('Please provide a valid string')
+} else {
+    for (let i = 0; i < input.length; i++) {
+        if (i === 0) {
+            inputInCamelCase += input[i].toLowerCase();
+        }
+        else if (input[i] === ' ') {
+            inputInCamelCase += input[i + 1].toUpperCase();
+            i++;//переходим к след элементу
+        }
+        else
+            inputInCamelCase += input[i].toLowerCase()
+    }
+}
+console.log(inputInCamelCase);
