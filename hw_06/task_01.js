@@ -20,6 +20,15 @@ function getEmployeeInfo(name) {
             return employeesInfo;
         }
         else return null;
+        //ИЛИ
+        // return index !== -1 ? [employeeName, salaries[index]] : null;
     }
 }
 console.log(getEmployeeInfo("Galina"))
+
+// function getEmployeeInfo(employeeName) {
+//   const employeeNames = ["Name1", "Name2", "Name3", "Name4"];
+//   const salaries = [100, 200, 300, 400];
+//   const index = employeeNames.indexOf(employeeName);
+//   return index !== -1 ? [employeeName, salaries[index]] : null;
+// }
