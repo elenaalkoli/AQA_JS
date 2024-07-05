@@ -44,7 +44,7 @@ const enterprises = [
       {
         id: 8,
         name: "Отдел охраны труда",
-        employees_count: 5,
+        employees_count: 0,
       },
     ]
   },
@@ -109,7 +109,7 @@ console.log("-------------------task_2-------------------")
 
 function getEnterpriseName(nameOrId) {
   if (!nameOrId) {
-    return console.log("Please, provide a valid id or name")
+    throw new Error("Please, provide a valid id or name")
   }
   for (let object of enterprises) {
     if (object.departments.find((department) => (department.name === nameOrId || department.id === nameOrId))) {
@@ -128,15 +128,15 @@ addEnterprise("Название нового предприятия")
 console.log("-------------------task_3-------------------")
 
 function addNewEnterprise(name) {
-  let newDepartment = {
-    id: getLastId(),
+  let newEnterprise = {
+    id: getNewId(),
     name,
-    departments: null
+    departments: []
   };
-  return [...enterprises, newDepartment];
+  return [...enterprises, newEnterprise];// enterprises.push(newEnterprise)
 }
 
-function getLastId() {
+function getNewId() {
   let id = 0;
   enterprises.forEach((object) => {
     if (object.id > id) {
@@ -179,9 +179,9 @@ function getNewDepartmentById(id, depName) { //найти по id департа
 
 function createNewDepartmentByName(name) { //создание нового департамента
   const newDepartment = {
-    id: getLastId(),
+    id: getNewId(),
     name,
-    employees_count: null,
+    employees_count: 0,
   }
   return newDepartment;
 }
@@ -196,9 +196,8 @@ editEnterprise(1, "Новое название предприятия")
 console.log("-------------------task_5-------------------")
 
 function editDepartmentName(id, newDepName) {
-  foundedDepartment = enterprises.find((object) => object.id = id);
+  foundedDepartment = enterprises.find((object) => object.id === id);
   foundedDepartment.name = newDepName;
-  return foundedDepartment;
 }
 editDepartmentName(1, "Новое название предприятия")
 console.log(enterprises)
@@ -218,7 +217,7 @@ function getDepartmentById(id) {
       return foundDept;
     }
   }
-  return console.log(`No department found by id: ${id}`);
+  throw new Error(`No department found by id: ${id}`);
 };
 
 function editDepartment(id, newEnterpName) { //присваиваем ему newEnterpName
@@ -237,10 +236,14 @@ deleteEnterprise(1)
 console.log("-------------------task_7-------------------")
 
 function deleteEnterprise(id) {
-  const newEnterprises = enterprises.filter((object) => object.id !== id); //новый массив
-  return console.log(newEnterprises);
+  const foundedIndexOfEnterprise = enterprises.findIndex((object) => object.id === id);
+  if (foundedIndexOfEnterprise === -1) {
+    throw new Error(`No enterprise founded by id: ${id}`)
+  }
+  else return enterprises.splice(foundedIndexOfEnterprise, 1);
 }
-deleteEnterprise(1)
+deleteEnterprise(5)
+console.log(enterprises)
 
 /*
 8. Написать функцию для удаления отдела. В качестве аргумента принимает id отдела. Удалить отдел можно только, если в нем нет сотрудников.
@@ -251,11 +254,12 @@ console.log("-------------------task_8-------------------")
 
 function deleteDepartment(id) {
   for (let object of enterprises) {
-    const newStructure = object.departments.filter(enterprise => enterprise.id !== id && enterprise.employees_count !== 0);
-    if (!newStructure) {
-      return console.log(`"No department found by id: ${id}`);
-    }
-    return console.log(newStructure);
+    object.departments.find((enterprise, index) => {
+      if (enterprise.id === id && enterprise.employees_count === 0) {
+        enterprise.splice(index, 1)
+      }
+    })
+    return console.log(`Enterprise with id: ${id} was deleted`);
   }
 }
 deleteDepartment(10)
