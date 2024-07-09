@@ -148,7 +148,7 @@ async function getObjectsById(url, userId) {
     } catch (error) {
         console.log(error);
     }
-    if (info.lenght === 0) {
+    if (info.length === 0) {
         return;
     } else
         console.log(info.filter((object) => object.userId === userId));
