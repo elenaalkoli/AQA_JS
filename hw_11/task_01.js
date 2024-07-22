@@ -1,3 +1,4 @@
+"use strict";
 // 1. Создайте interface ItEmployee
 // 2. В интерфейсе ItEmployee сделайте поле name которое может быть только string
 // 3. В интерфейсе ItEmployee сделайте поле surname которое может быть только string
@@ -10,9 +11,7 @@
 // 10. В интерфейсе ItEmployee сделайте необязательное поле address типа IAddress
 // 11. В интерфейсе ItEmployee сделайте projectNames, типа массив строк (названий проектов)
 // 12. Создайте объект с типом ItEmployee
-
 // type TGrade = "junior" | "middle" | "senior" | "lead";
-
 // interface ItEmployee {
 //     name: string;
 //     surname: string;
@@ -22,20 +21,17 @@
 //     address?: IAddress; //необязательное поле, значение из интерфейса 
 //     projectNames: string[];
 // }
-
 // enum OCCUPATION {
 //     DEVELOPER = "Developer",
 //     QA = "QA Engineer",
 //     DESINGER = "UI/UX Desinger",
 // }
-
 // interface IAddress {
 //     country: string;
 //     street: string;
 //     house: number;
 //     flat: number;
 // }
-
 // const newEmployee: ItEmployee = {
 //     name: 'Elena',
 //     surname: 'Al-Koli',
