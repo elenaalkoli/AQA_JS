@@ -11,36 +11,36 @@
 // 11. В интерфейсе ItEmployee сделайте projectNames, типа массив строк (названий проектов)
 // 12. Создайте объект с типом ItEmployee
 
-type TGrade = "junior" | "middle" | "senior" | "lead";
+// type TGrade = "junior" | "middle" | "senior" | "lead";
 
-interface ItEmployee {
-    name: string;
-    surname: string;
-    readonly salary: number;
-    grade: TGrade; //значение из типа TGrade
-    occupation: OCCUPATION;
-    address?: IAddress; //необязательное поле, значение из интерфейса 
-    projectNames: string[];
-}
+// interface ItEmployee {
+//     name: string;
+//     surname: string;
+//     readonly salary: number;
+//     grade: TGrade; //значение из типа TGrade
+//     occupation: OCCUPATION;
+//     address?: IAddress; //необязательное поле, значение из интерфейса 
+//     projectNames: string[];
+// }
 
-enum OCCUPATION {
-    DEVELOPER = "Developer",
-    QA = "QA Engineer",
-    DESINGER = "UI/UX Desinger",
-}
+// enum OCCUPATION {
+//     DEVELOPER = "Developer",
+//     QA = "QA Engineer",
+//     DESINGER = "UI/UX Desinger",
+// }
 
-interface IAddress {
-    country: string;
-    street: string;
-    house: number;
-    flat: number;
-}
+// interface IAddress {
+//     country: string;
+//     street: string;
+//     house: number;
+//     flat: number;
+// }
 
-const newEmployee: ItEmployee = {
-    name: 'Elena',
-    surname: 'Al-Koli',
-    salary: 2500,
-    grade: 'junior',
-    occupation: OCCUPATION.QA,
-    projectNames: ['3dGame', 'MerchStore'],
-}
+// const newEmployee: ItEmployee = {
+//     name: 'Elena',
+//     surname: 'Al-Koli',
+//     salary: 2500,
+//     grade: 'junior',
+//     occupation: OCCUPATION.QA,
+//     projectNames: ['3dGame', 'MerchStore'],
+// }
